@@ -123,21 +123,7 @@ const rowPropiedades = document.querySelector("#propiedades");
 let template = "";
 let propiedades = [];
 
-const permitido_fumar = propiedades.smoke
-  ? `<p class="text-success">
-                  <i class="fas fa-smoking"></i> Permitido fumar
-                </p>`
-  : `<p class="text-danger">
-                  <i class="fas fa-smoking-ban"></i> No se permite fumar
-                </p>`;
-                
-const permitido_mascotas = propiedades.pets
-  ? `<p class="text-success">
-                  <i class="fas fa-dog"></i> Se permiten mascotas
-                </p>`
-  : `<p class="text-danger">
-                  <i class="fa-solid fa-ban"></i> No se permiten mascotas
-                </p>`;
+
 
 if (window.location.pathname === "/propiedades_venta.html") {
   propiedades = ventas;
@@ -146,6 +132,24 @@ if (window.location.pathname === "/propiedades_venta.html") {
 }
 
 for (const propiedad of propiedades) {
+
+const permitido_fumar = propiedad.smoke
+  ? `<p class="text-success">
+                  <i class="fas fa-smoking"></i> Permitido fumar
+                </p>`
+  : `<p class="text-danger">
+                  <i class="fas fa-smoking-ban"></i> No se permite fumar
+                </p>`;
+
+const permitido_mascotas = propiedad.pets
+  ? `<p class="text-success">
+                  <i class="fas fa-dog"></i> Se permiten mascotas
+                </p>`
+  : `<p class="text-danger">
+                  <i class="fa-solid fa-ban"></i> No se permiten mascotas
+                </p>`;
+
+
   template += `
     <div class="col-md-4 mb-4">
             <div class="card">
